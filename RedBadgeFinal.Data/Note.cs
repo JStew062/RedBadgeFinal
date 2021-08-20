@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,8 @@ namespace RedBadgeFinal.Data
         [Required]
         public string Content { get; set; }
 
-        [Required]
-        [Display(Name = "Needed Service")]
-        public string ServiceName { get; set; }
+        public virtual ICollection<ServiceNote> Services { get; set; } = new List<ServiceNote>();
+
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

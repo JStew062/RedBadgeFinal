@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RedBadgeFinal.Data\RedBadgeFinal.Data.csproj">
+      <Project>{76976a24-3ca6-43dc-a89e-a3107ed6198f}</Project>
+      <Name>RedBadgeFinal.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RedBadgeFinal.Models\RedBadgeFinal.Models.csproj">
+      <Project>{7802b7ed-a0c8-41e0-b258-ae3a057abae5}</Project>
+      <Name>RedBadgeFinal.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

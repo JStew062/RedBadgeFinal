@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace RedBadgeFinal.WebMVC.Controllers
 {
+    [Authorize]
     public class NoteController : Controller
     {
         // GET: Note

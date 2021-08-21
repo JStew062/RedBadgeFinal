@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RedBadgeFinal.Models
 {
-    public class NoteListItem
+        public class NoteListItem
     {
         public int NoteId { get; set; }
 

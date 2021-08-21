@@ -22,6 +22,7 @@ namespace RedBadgeFinal.Services
             var entity =
                 new Note()
                 {
+                    OwnerId = _userId,
                     Content = model.Content,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -39,7 +40,7 @@ namespace RedBadgeFinal.Services
                 var query =
                     ctx
                     .Notes
-                    //.Where(e => e.OwnerId == _userId)
+                    .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
                         new NoteListItem

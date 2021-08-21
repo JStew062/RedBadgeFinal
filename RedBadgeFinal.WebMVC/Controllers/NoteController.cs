@@ -49,7 +49,7 @@ namespace RedBadgeFinal.WebMVC.Controllers
         public ActionResult Details(int id)
         {
             var svc = CreateNoteService();
-            var model = svc.GetNoteById(Id)
+            var model = svc.GetNoteById(id);
 
                 return View(model);
         }

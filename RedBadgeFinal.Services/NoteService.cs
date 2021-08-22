@@ -24,6 +24,7 @@ namespace RedBadgeFinal.Services
                 {
                     OwnerId = _userId,
                     Content = model.Content,
+                    //ServiceNote = model.ServiceNote,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -66,10 +67,44 @@ namespace RedBadgeFinal.Services
                     {
                         NoteId = entity.NoteId,
                         Content = entity.Content,
+                        //ServiceNote = entity.ServiceNote,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
 
                     };
+            }
+        }
+
+        public bool UpdateNote(NoteEdit model)
+        { 
+            
+        using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Notes
+                    .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
+
+                entity.Content = model.Content;
+                //entity.ServiceNote = model.ServiceNote;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+
+        public bool DeleteNote(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Notes
+                    .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+
+                ctx.Notes.Remove(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
     }

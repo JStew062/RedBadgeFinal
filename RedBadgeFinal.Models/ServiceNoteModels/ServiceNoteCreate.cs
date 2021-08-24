@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedBadgeFinal.Models
+namespace RedBadgeFinal.Models.ServiceNoteModels
 {
-    public class NoteEdit
+    public class ServiceNoteCreate
     {
+        public int ServiceId { get; set; }
         public int NoteId { get; set; }
-        public string Content { get; set; }
-        //public string ServiceNote { get; set; }
     }
 }

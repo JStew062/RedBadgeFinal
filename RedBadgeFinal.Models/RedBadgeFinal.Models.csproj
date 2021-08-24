@@ -59,6 +59,11 @@
     <Compile Include="NoteEdit.cs" />
     <Compile Include="NoteListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceCreate.cs" />
+    <Compile Include="ServiceDetail.cs" />
+    <Compile Include="ServiceEdit.cs" />
+    <Compile Include="ServiceListItem.cs" />
+    <Compile Include="ServiceNoteModels\ServiceNoteCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

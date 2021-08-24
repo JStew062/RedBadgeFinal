@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace RedBadgeFinal.Models
 {
-    public class NoteDetail
+    public class ServiceDetail
     {
-        public int NoteId { get; set; }
-        public string Content { get; set; }
-        public string ServiceNote { get; set; }
+        public int ServiceId { get; set; }
+        public string ServiceName { get; set; }
 
-        [Display(Name="Created")]
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        [Display(Name="Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
 
         public List<string> Services { get; set; }
     }

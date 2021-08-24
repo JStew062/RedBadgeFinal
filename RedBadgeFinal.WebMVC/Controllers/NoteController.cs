@@ -62,7 +62,7 @@ namespace RedBadgeFinal.WebMVC.Controllers
                 new NoteEdit
                 {
                     NoteId = detail.NoteId,
-                    ServiceNote = detail.ServiceNote,
+                    //ServiceNote = detail.ServiceNote,
                     Content = detail.Content
                 };
             return View(model);

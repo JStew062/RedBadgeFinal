@@ -13,5 +13,8 @@ namespace RedBadgeFinal.Models
         public string ServiceNote { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
+
+        public List<string> Services { get; set; }
+
     }
 }

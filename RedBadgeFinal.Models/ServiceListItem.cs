@@ -5,19 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedBadgeFinal.Data
+namespace RedBadgeFinal.Models
 {
-    public class Service
+    public class ServiceListItem
     {
         public int ServiceId { get; set; }
-
         public string ServiceName { get; set; }
-
-        public virtual ICollection<ServiceNote> Notes { get; set; } = new List<ServiceNote>();
-
-        [Required]
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

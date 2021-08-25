@@ -41,7 +41,7 @@ namespace RedBadgeFinal.Services
                 var query =
                     ctx
                     .Services
-                    //.Where(e => e.ServiceId == _serviceId)
+                    //.Where(e => e.OwnerId == _OwnerId)
                     .Select(
                         e =>
                         new ServiceListItem
@@ -67,7 +67,7 @@ namespace RedBadgeFinal.Services
                     {
                         ServiceId = entity.ServiceId,
                         ServiceName = entity.ServiceName
-                        //ServiceNote = entity.ServiceNote,
+                        //ServiceNote = entity.ServiceNote
                     };
             }
         }

@@ -10,14 +10,14 @@ using System.Web.Mvc;
 namespace RedBadgeFinal.WebMVC.Controllers
 {
     [Authorize]
-    public class ServiceController : Controller
+    public class LocationController : Controller
     {
-        // GET: Service
+        // GET: Location
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ServiceService(userId);
-            var model = service.GetServices();
+            var service = new LocationService(userId);
+            var model = service.GetLocations();
             return View(model);
         }
 
@@ -29,72 +29,74 @@ namespace RedBadgeFinal.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ServiceCreate model)
+        public ActionResult Create(LocationCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            var service = CreateServiceService();
+            var service = CreateLocationService();
 
-            if (service.CreateService(model))
+            if (service.CreateLocation(model))
             {
-                TempData["SaveResult"] = "Your service was created.";
+                TempData["SaveResult"] = "Your location was created.";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Service could not be created.");
+            ModelState.AddModelError("", "Location could not be created.");
 
             return View(model);
         }
 
         public ActionResult Details(int id)
         {
-            var svc = CreateServiceService();
-            var model = svc.GetServiceById(id);
+            var svc = CreateLocationService();
+            var model = svc.GetLocationById(id);
 
             return View(model);
         }
 
         public ActionResult Edit(int id)
         {
-            var service = CreateServiceService();
-            var detail = service.GetServiceById(id);
+            var service = CreateLocationService();
+            var detail = service.GetLocationById(id);
             var model =
-                new ServiceEdit
+                new LocationEdit
                 {
-                    ServiceId = detail.ServiceId,
-                    ServiceName = detail.ServiceName
+                    LocationId = detail.LocationId,
+                    City = detail.City,
+                    County = detail.County,
+                    ZipCode = detail.ZipCode
                 };
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ServiceEdit model)
+        public ActionResult Edit(int id, LocationEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.ServiceId != id)
+            if (model.LocationId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
-            var service = CreateServiceService();
+            var service = CreateLocationService();
 
-            if (service.UpdateService(model))
+            if (service.UpdateLocation(model))
             {
-                TempData["SaveResult"] = "Your note was updated.";
+                TempData["SaveResult"] = "Your location was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your note could not be updated.");
+            ModelState.AddModelError("", "Your location could not be updated.");
             return View(model);
         }
 
         public ActionResult Delete(int id)
         {
-            var svc = CreateServiceService();
-            var model = svc.GetServiceById(id);
+            var svc = CreateLocationService();
+            var model = svc.GetLocationById(id);
 
             return View(model);
         }
@@ -104,19 +106,19 @@ namespace RedBadgeFinal.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreateServiceService();
+            var service = CreateLocationService();
 
-            service.DeleteService(id);
+            service.DeleteLocation(id);
 
-            TempData["SaveResult"] = "Your service was deleted";
+            TempData["SaveResult"] = "Your location was deleted";
 
             return RedirectToAction("index");
         }
 
-        private ServiceService CreateServiceService()
+        private LocationService CreateLocationService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ServiceService(userId);
+            var service = new LocationService(userId);
             return service;
         }
     }

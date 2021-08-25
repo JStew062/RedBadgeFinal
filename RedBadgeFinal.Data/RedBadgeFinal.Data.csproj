@@ -72,6 +72,14 @@
     <Compile Include="Migrations\202108241332545_Tuesam.Designer.cs">
       <DependentUpon>202108241332545_Tuesam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108251452329_Wed am.cs" />
+    <Compile Include="Migrations\202108251452329_Wed am.Designer.cs">
+      <DependentUpon>202108251452329_Wed am.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108252152192_Wed PM.cs" />
+    <Compile Include="Migrations\202108252152192_Wed PM.Designer.cs">
+      <DependentUpon>202108252152192_Wed PM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -96,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108241332545_Tuesam.resx">
       <DependentUpon>202108241332545_Tuesam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108251452329_Wed am.resx">
+      <DependentUpon>202108251452329_Wed am.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108252152192_Wed PM.resx">
+      <DependentUpon>202108252152192_Wed PM.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

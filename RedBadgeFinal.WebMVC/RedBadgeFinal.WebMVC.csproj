@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
@@ -244,6 +245,13 @@
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\Service\Create.cshtml" />
     <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\Details.cshtml" />
+    <Content Include="Views\Service\Delete.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Location\Create.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
+    <Content Include="Views\Location\Edit.cshtml" />
+    <Content Include="Views\Location\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

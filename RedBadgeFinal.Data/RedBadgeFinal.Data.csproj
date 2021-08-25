@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202108232007373_2nd.Designer.cs">
       <DependentUpon>202108232007373_2nd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108241332545_Tuesam.cs" />
+    <Compile Include="Migrations\202108241332545_Tuesam.Designer.cs">
+      <DependentUpon>202108241332545_Tuesam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108232007373_2nd.resx">
       <DependentUpon>202108232007373_2nd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108241332545_Tuesam.resx">
+      <DependentUpon>202108241332545_Tuesam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,6 +17,10 @@ namespace RedBadgeFinal.Data
         [ForeignKey(nameof(Location))]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
+
+        [ForeignKey(nameof(Service))]
+        public int ServiceId { get; set; }
+        public virtual Service Service { get; set; }
     }
     
 }

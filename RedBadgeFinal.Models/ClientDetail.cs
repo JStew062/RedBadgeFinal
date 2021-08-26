@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedBadgeFinal.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,18 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedBadgeFinal.Data
+namespace RedBadgeFinal.Models
 {
-    public class Client
+    public class ClientDetail
     {
-        [Key]
+        [Required]
         public int ClientId { get; set; }
         public string ClientName { get; set; }
-        
-        [ForeignKey(nameof(Location))]
-        public int LocationId { get; set; }
-        public virtual Location Location { get; set; }
 
+        public int LocationId { get; set; }
+        
         public string CaseMgr { get; set; }
     }
 }

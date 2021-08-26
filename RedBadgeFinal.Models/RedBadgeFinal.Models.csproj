@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientCreate.cs" />
+    <Compile Include="ClientDetail.cs" />
+    <Compile Include="ClientEdit.cs" />
+    <Compile Include="ClientListItem.cs" />
     <Compile Include="LocationCreate.cs" />
     <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
@@ -63,6 +67,10 @@
     <Compile Include="NoteEdit.cs" />
     <Compile Include="NoteListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderCreate.cs" />
+    <Compile Include="ProviderDetail.cs" />
+    <Compile Include="ProviderEdit.cs" />
+    <Compile Include="ProviderListItem.cs" />
     <Compile Include="ServiceCreate.cs" />
     <Compile Include="ServiceDetail.cs" />
     <Compile Include="ServiceEdit.cs" />
@@ -72,6 +80,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RedBadgeFinal.Data\RedBadgeFinal.Data.csproj">
+      <Project>{76976A24-3CA6-43DC-A89E-A3107ED6198F}</Project>
+      <Name>RedBadgeFinal.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

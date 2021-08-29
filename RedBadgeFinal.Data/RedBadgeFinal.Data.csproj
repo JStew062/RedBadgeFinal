@@ -80,6 +80,18 @@
     <Compile Include="Migrations\202108252152192_Wed PM.Designer.cs">
       <DependentUpon>202108252152192_Wed PM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108261402035_Thurs AM.cs" />
+    <Compile Include="Migrations\202108261402035_Thurs AM.Designer.cs">
+      <DependentUpon>202108261402035_Thurs AM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108261931354_Thurs330.cs" />
+    <Compile Include="Migrations\202108261931354_Thurs330.Designer.cs">
+      <DependentUpon>202108261931354_Thurs330.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108271815410_200.cs" />
+    <Compile Include="Migrations\202108271815410_200.Designer.cs">
+      <DependentUpon>202108271815410_200.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -110,6 +122,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108252152192_Wed PM.resx">
       <DependentUpon>202108252152192_Wed PM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108261402035_Thurs AM.resx">
+      <DependentUpon>202108261402035_Thurs AM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108261931354_Thurs330.resx">
+      <DependentUpon>202108261931354_Thurs330.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108271815410_200.resx">
+      <DependentUpon>202108271815410_200.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using RedBadgeFinal.Models;
+﻿using Microsoft.AspNet.Identity;
+using RedBadgeFinal.Models;
 using RedBadgeFinal.Services;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace RedBadgeFinal.WebMVC.Controllers
         // GET: Client
         public ActionResult Index()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ClientService(userId);
             var model = service.GetClients();
             return View(model);

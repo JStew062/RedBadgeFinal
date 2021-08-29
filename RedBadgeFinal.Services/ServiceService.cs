@@ -25,12 +25,24 @@ namespace RedBadgeFinal.Services
                 {
                     //OwnerId = _userId,
                     ServiceName = model.ServiceName,
+                    //ProvId = model.ProvId,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Services.Add(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public void AddProviderToService(int provId, int serviceId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var foundProvider = ctx.Providers.Single(p => p.ProvId == provId);
+                var foundService = ctx.Services.Single(s => s.ServiceId == serviceId);
+                foundService.ListOfProviders.Add(foundProvider);
+                var testing = ctx.SaveChanges();
             }
         }
 
@@ -47,6 +59,7 @@ namespace RedBadgeFinal.Services
                         new ServiceListItem
                         {
                             ServiceId = e.ServiceId,
+                            ServiceName = e.ServiceName,
                             CreatedUtc = e.CreatedUtc
                         }
             );

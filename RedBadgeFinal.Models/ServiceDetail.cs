@@ -12,6 +12,9 @@ namespace RedBadgeFinal.Models
         public int ServiceId { get; set; }
         public string ServiceName { get; set; }
 
+        public int ProvId { get; set; }
+        public string ProvName { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 

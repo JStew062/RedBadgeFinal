@@ -10,7 +10,7 @@ namespace RedBadgeFinal.Services
 {
     public class ProviderService
     {
-    
+
         private readonly Guid _userId;
 
         public ProviderService(Guid userId)
@@ -24,9 +24,10 @@ namespace RedBadgeFinal.Services
                 new Provider()
                 {
                     //OwnerId = _userId,
+                    ProvId = model.ProvId,
                     ProvName = model.ProvName,
                     LocationId = model.LocationId,
-                    ServiceName = model.ServiceName
+                    ServiceId = model.ServiceId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,9 +48,10 @@ namespace RedBadgeFinal.Services
                         e =>
                         new ProviderListItem
                         {
+                            ProvId = e.ProvId,
                             ProvName = e.ProvName,
                             LocationId = e.LocationId,
-                            ServiceName = e.ServiceName
+                            //ServiceId = e.ServiceId
                         }
             );
                 return query.ToArray();
@@ -67,14 +69,14 @@ namespace RedBadgeFinal.Services
                 return
                     new ProviderDetail
                     {
+                        ProvId = entity.ProvId,
                         ProvName = entity.ProvName,
                         LocationId = entity.LocationId,
-                        ServiceName = entity.ServiceName
+                        //ServiceId = entity.ServiceId
 
                     };
             }
         }
-
         public bool UpdateProvider(ProviderEdit model)
         {
 
@@ -88,12 +90,13 @@ namespace RedBadgeFinal.Services
                 entity.ProvId = model.ProvId;
                 entity.ProvName = model.ProvName;
                 entity.LocationId = model.LocationId;
-                entity.ServiceName = model.ServiceName;
+                //entity.ServiceId = model.ServiceId;
 
                 return ctx.SaveChanges() == 1;
 
             }
         }
+
 
         public bool DeleteProvider(int provId)
         {

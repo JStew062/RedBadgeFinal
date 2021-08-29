@@ -21,7 +21,7 @@ namespace RedBadgeFinal.Models
         public virtual Location Location { get; set; }
 
         [ForeignKey(nameof(Service))]
-        public int ServiceName { get; set; }
+        public int ServiceId { get; set; }
         public virtual Service Service { get; set; }
     }
 }

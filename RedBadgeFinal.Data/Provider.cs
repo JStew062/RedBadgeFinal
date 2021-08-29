@@ -18,9 +18,14 @@ namespace RedBadgeFinal.Data
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
 
-        [ForeignKey(nameof(Service))]
-        public int ServiceName { get; set; }
-        public virtual Service Service { get; set; }
+
+
+        public virtual ICollection<Service> ListOfServices { get; set; }
+
+            public Provider()
+        {
+            ListOfServices = new HashSet<Service>();
+        }
     }
     
 }

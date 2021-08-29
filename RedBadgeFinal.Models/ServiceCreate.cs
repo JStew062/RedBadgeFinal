@@ -13,5 +13,7 @@ namespace RedBadgeFinal.Models
             public int ServiceId { get; set; }
             [Required]
             public string ServiceName { get; set; }
+            public int ProvId { get; set; }
+            public string ProviderName { get; set; }
     }
 }

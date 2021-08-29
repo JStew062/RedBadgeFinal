@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Providers</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -18,28 +18,28 @@
             @Html.DisplayNameFor(model => model.LocationId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ServiceName)
+            @Html.DisplayNameFor(model => model.ServiceId)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProvName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ServiceName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.ProvId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ProvId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ProvId })
-        </td>
-    </tr>
+<tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.ProvName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LocationId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ServiceId)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.ProvId }) |
+        @Html.ActionLink("Details", "Details", new { id=item.ProvId }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.ProvId })
+    </td>
+</tr>
 }
 
 </table>

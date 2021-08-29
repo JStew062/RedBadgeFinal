@@ -1,4 +1,5 @@
-﻿using RedBadgeFinal.Models;
+﻿using Microsoft.AspNet.Identity;
+using RedBadgeFinal.Models;
 using RedBadgeFinal.Services;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,8 @@ namespace RedBadgeFinal.WebMVC.Controllers
         // GET: Provider
         public ActionResult Index()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            //var service = new ProviderService(userId);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProviderService(userId);
             var model = service.GetProviders();
             return View(model);
         }
@@ -62,7 +63,7 @@ namespace RedBadgeFinal.WebMVC.Controllers
                     ProvId = detail.ProvId,
                     ProvName = detail.ProvName,
                     LocationId = detail.LocationId,
-                    ServiceName = detail.ServiceName
+                    ServiceId = detail.ServiceId
                 };
             return View(model);
         }

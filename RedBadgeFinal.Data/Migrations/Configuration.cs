@@ -10,7 +10,6 @@ namespace RedBadgeFinal.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "RedBadgeFinal.Data.ApplicationDbContext";
         }
 
         protected override void Seed(RedBadgeFinal.Data.ApplicationDbContext context)

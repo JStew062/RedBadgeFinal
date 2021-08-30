@@ -12,5 +12,6 @@ namespace RedBadgeFinal.Models
         [Required]
         public string Content { get; set; }
         public string ServiceNote { get; set; }
+        public string Services { get; set; }
     }
 }

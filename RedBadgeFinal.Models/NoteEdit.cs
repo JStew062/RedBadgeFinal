@@ -11,5 +11,6 @@ namespace RedBadgeFinal.Models
         public int NoteId { get; set; }
         public string Content { get; set; }
         public string ServiceNote { get; set; }
+        public string Service { get; set; }
     }
 }

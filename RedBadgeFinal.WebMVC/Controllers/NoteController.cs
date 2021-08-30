@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using RedBadgeFinal.Models;
+using RedBadgeFinal.Models.ServiceNoteModels;
 using RedBadgeFinal.Services;
 using System;
 using System.Collections.Generic;
@@ -97,6 +98,31 @@ namespace RedBadgeFinal.WebMVC.Controllers
             var svc = CreateNoteService();
             var model = svc.GetNoteById(id);
 
+            return View(model);
+        }
+
+
+        public ActionResult AddServiceToNote(int id)
+        {
+            var model = new ServiceNoteCreate()
+            {
+                NoteId = id
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddServiceToNote(ServiceNoteCreate model)
+        {
+            var service = CreateNoteService();
+
+            if (service.AddService(model))
+            {
+                return RedirectToAction("Details", new { id = model.NoteId });
+            }
+
+            ModelState.AddModelError("", "Service could not be added to Note");
             return View(model);
         }
 

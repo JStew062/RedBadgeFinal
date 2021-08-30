@@ -1,5 +1,6 @@
 ﻿using RedBadgeFinal.Data;
 using RedBadgeFinal.Models;
+using RedBadgeFinal.Models.ServiceNoteModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace RedBadgeFinal.Services
                 {
                     OwnerId = _userId,
                     Content = model.Content,
+                    //Services = model.Services,
                     //ServiceNote = model.ServiceNote,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -47,10 +49,13 @@ namespace RedBadgeFinal.Services
                         new NoteListItem
                         {
                             NoteId = e.NoteId,
-                            CreatedUtc = e.CreatedUtc
+                            Content = e.Content,
+                            //ServiceNote = entity.ServiceNote,
+                            CreatedUtc = e.CreatedUtc,
+                            Services = e.Services.Select(s => s.Service.ServiceName).ToList()
                         }
             );
-            return query.ToArray();
+                return query.ToArray();
             }
         }
 
@@ -69,16 +74,16 @@ namespace RedBadgeFinal.Services
                         Content = entity.Content,
                         //ServiceNote = entity.ServiceNote,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
-
+                        ModifiedUtc = entity.ModifiedUtc,
+                        Services = entity.Services.Select(s => s.Service.ServiceName).ToList()
                     };
             }
         }
 
         public bool UpdateNote(NoteEdit model)
-        { 
-            
-        using(var ctx = new ApplicationDbContext())
+        {
+
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
@@ -91,6 +96,20 @@ namespace RedBadgeFinal.Services
 
                 return ctx.SaveChanges() == 1;
 
+            }
+        }
+
+        public bool AddService(ServiceNoteCreate model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = new ServiceNote()
+                {
+                    NoteId = model.NoteId,
+                    ServiceId = model.ServiceId
+                };
+
+                return ctx.SaveChanges() == 1;
             }
         }
 

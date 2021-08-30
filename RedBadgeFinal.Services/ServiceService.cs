@@ -80,10 +80,36 @@ namespace RedBadgeFinal.Services
                     {
                         ServiceId = entity.ServiceId,
                         ServiceName = entity.ServiceName
-                        //ServiceNote = entity.ServiceNote
-                    };
+                                //ServiceNote = entity.ServiceNote
+                            };
             }
         }
+
+
+        /* public ServiceDetail GetServiceById(int id)
+         {
+             using (var ctx = new ApplicationDbContext())
+             {
+                 var entity =
+                     ctx
+                     .Services
+                     .SingleOrDefault(e => e.ServiceId == id);
+                 var service = new ServiceDetail()
+                 {
+                     ServiceId = entity.ServiceId,
+                     ServiceName = entity.ServiceName,
+                     //ServiceNote = entity.ServiceNote
+                     Notes = entity.Notes.Select(e => new Models.NoteListItem()
+                     {
+                         Content = e.Note.Content,
+                         //ServiceNote = e.Service.ServiceId + " " + e.Service.ServiceName,
+                         CreatedUtc = e.Note.CreatedUtc,
+                         NoteId = e.NoteId
+                     }).ToList()
+                 };
+             }
+         }*/
+
 
         public bool UpdateService(ServiceEdit model)
         {

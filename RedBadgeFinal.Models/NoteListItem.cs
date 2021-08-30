@@ -10,8 +10,9 @@ namespace RedBadgeFinal.Models
         public class NoteListItem
     {
         public int NoteId { get; set; }
+        public string Content { get; set; }
         public string ServiceNote { get; set; }
-        [Display(Name="Created")]
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public List<string> Services { get; set; }

@@ -37,6 +37,7 @@ namespace RedBadgeFinal.Data
         public DbSet<Client> Clients { get; set; } //
         public DbSet<Location> Locations { get; set; } //
         public DbSet<Provider> Providers { get; set; } //
+        public DbSet<ServiceNote> ServiceNotes { get; set; } //
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

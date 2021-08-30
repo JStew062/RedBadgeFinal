@@ -22,10 +22,7 @@ namespace RedBadgeFinal.Data
 
         public virtual ICollection<Service> ListOfServices { get; set; }
 
-            public Provider()
-        {
-            ListOfServices = new HashSet<Service>();
-        }
+
     }
     
 }

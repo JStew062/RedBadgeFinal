@@ -27,7 +27,7 @@ namespace RedBadgeFinal.Services
                     ProvId = model.ProvId,
                     ProvName = model.ProvName,
                     LocationId = model.LocationId,
-                    ServiceId = model.ServiceId
+                    //ListOfServices = model.Service
                 };
             using (var ctx = new ApplicationDbContext())
             {

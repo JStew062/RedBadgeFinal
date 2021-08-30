@@ -16,10 +16,12 @@ namespace RedBadgeFinal.Data
         [Required]
         public Guid OwnerId { get; set; }
 
-
-
         [Required]
         public string Content { get; set; }
+
+/*        [ForeignKey(nameof(Service))]
+        public int? ServiceId { get; set; }
+        public virtual Service Service { get; set; }*/
 
         public virtual ICollection<ServiceNote> Services { get; set; } = new List<ServiceNote>();
 
@@ -29,5 +31,6 @@ namespace RedBadgeFinal.Data
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
+      
     }
 }

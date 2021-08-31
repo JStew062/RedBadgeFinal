@@ -17,11 +17,12 @@
         <li>@Html.ActionLink("Notes", "Index", "Note")</li>
 
         <li>@Html.ActionLink("About", "About", "Home")</li>
-
     </ul>
+    @Html.Partial("_LoginPartial")
     <section id="main">
         @RenderBody()
         <p>Copyright W3schools 2012. All Rights Reserved.</p>
     </section>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

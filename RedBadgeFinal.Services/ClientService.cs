@@ -49,7 +49,8 @@ namespace RedBadgeFinal.Services
                             ClientId = e.ClientId,
                             ClientName = e.ClientName,
                             LocationId = e.LocationId,
-                            CaseMgr = e.CaseMgr
+                            CaseMgr = e.CaseMgr,
+                            //Content = e.Content
                         }
             );
                 return query.ToArray();

@@ -16,5 +16,8 @@ namespace RedBadgeFinal.Models
         public int LocationId { get; set; }
 
         public string CaseMgr { get; set; }
+
+        public string Content { get; set; }
+
     }
 }

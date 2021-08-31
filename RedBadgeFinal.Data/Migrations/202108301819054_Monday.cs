@@ -3,7 +3,7 @@ namespace RedBadgeFinal.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Mon : DbMigration
+    public partial class Monday : DbMigration
     {
         public override void Up()
         {
@@ -40,11 +40,8 @@ namespace RedBadgeFinal.Data.Migrations
                         Content = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        Service_ServiceId = c.Int(),
                     })
-                .PrimaryKey(t => t.NoteId)
-                .ForeignKey("dbo.Service", t => t.Service_ServiceId)
-                .Index(t => t.Service_ServiceId);
+                .PrimaryKey(t => t.NoteId);
             
             CreateTable(
                 "dbo.ServiceNote",
@@ -174,7 +171,6 @@ namespace RedBadgeFinal.Data.Migrations
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.ServiceNote", "ServiceId", "dbo.Service");
-            DropForeignKey("dbo.Note", "Service_ServiceId", "dbo.Service");
             DropForeignKey("dbo.Provider", "LocationId", "dbo.Location");
             DropForeignKey("dbo.ProviderService", "Service_ServiceId", "dbo.Service");
             DropForeignKey("dbo.ProviderService", "Provider_ProvId", "dbo.Provider");
@@ -189,7 +185,6 @@ namespace RedBadgeFinal.Data.Migrations
             DropIndex("dbo.Provider", new[] { "LocationId" });
             DropIndex("dbo.ServiceNote", new[] { "NoteId" });
             DropIndex("dbo.ServiceNote", new[] { "ServiceId" });
-            DropIndex("dbo.Note", new[] { "Service_ServiceId" });
             DropIndex("dbo.Client", new[] { "LocationId" });
             DropTable("dbo.ProviderService");
             DropTable("dbo.IdentityUserLogin");

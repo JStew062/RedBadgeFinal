@@ -5,6 +5,7 @@
 }
 
 <h2>Clients</h2>
+<p>The time is @DateTime.Now</p>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -26,26 +27,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClientId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClientName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CaseMgr)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ClientId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ClientId })
-        </td>
-    </tr>
-}
+    <div class="table-bordered">
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseMgr)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ClientId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ClientId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ClientId })
+            </td>
+        </tr>
+    }
+        </div>
 
-</table>
+    </table>

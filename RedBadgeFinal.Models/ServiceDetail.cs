@@ -22,6 +22,6 @@ namespace RedBadgeFinal.Models
         public DateTimeOffset CreatedUtc { get; set; }
 
         public List<string> Services { get; set; }
-        public List<string> Notes { get; set; }
+        public List<NoteListItem> Notes { get; set; }
     }
 }

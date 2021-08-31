@@ -56,9 +56,9 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Migrations\202108301316519_Mon.cs" />
-    <Compile Include="Migrations\202108301316519_Mon.Designer.cs">
-      <DependentUpon>202108301316519_Mon.cs</DependentUpon>
+    <Compile Include="Migrations\202108301819054_Monday.cs" />
+    <Compile Include="Migrations\202108301819054_Monday.Designer.cs">
+      <DependentUpon>202108301819054_Monday.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -73,8 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108301316519_Mon.resx">
-      <DependentUpon>202108301316519_Mon.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108301819054_Monday.resx">
+      <DependentUpon>202108301819054_Monday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

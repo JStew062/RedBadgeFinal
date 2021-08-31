@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/redbadgefinalwebmvcdbserver/databases/RedBadgeFinal.WebMVC_db",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/redbadgefinalwebmvc2dbserver/databases/RedBadgeFinal.WebMVC_db2",
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:DefaultConnection",
       "secretStore": "AzureAppSettings"

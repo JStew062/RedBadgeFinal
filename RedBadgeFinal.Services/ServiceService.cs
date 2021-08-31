@@ -67,25 +67,6 @@ namespace RedBadgeFinal.Services
             }
         }
 
-        public ServiceDetail GetServiceById(int id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                    .Services
-                    .Single(e => e.ServiceId == id);
-                return
-                    new ServiceDetail
-                    {
-                        ServiceId = entity.ServiceId,
-                        ServiceName = entity.ServiceName
-                                //ServiceNote = entity.ServiceNote
-                            };
-            }
-        }
-
-
         /* public ServiceDetail GetServiceById(int id)
          {
              using (var ctx = new ApplicationDbContext())
@@ -93,22 +74,42 @@ namespace RedBadgeFinal.Services
                  var entity =
                      ctx
                      .Services
-                     .SingleOrDefault(e => e.ServiceId == id);
-                 var service = new ServiceDetail()
-                 {
-                     ServiceId = entity.ServiceId,
-                     ServiceName = entity.ServiceName,
-                     //ServiceNote = entity.ServiceNote
-                     Notes = entity.Notes.Select(e => new Models.NoteListItem()
+                     .Single(e => e.ServiceId == id);
+                 return
+                     new ServiceDetail
                      {
-                         Content = e.Note.Content,
-                         //ServiceNote = e.Service.ServiceId + " " + e.Service.ServiceName,
-                         CreatedUtc = e.Note.CreatedUtc,
-                         NoteId = e.NoteId
-                     }).ToList()
-                 };
+                         ServiceId = entity.ServiceId,
+                         ServiceName = entity.ServiceName
+                         //ServiceNote = entity.ServiceNote
+                     };
              }
          }*/
+
+
+        public ServiceDetail GetServiceById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Services
+                    .SingleOrDefault(e => e.ServiceId == id);
+                var service = new ServiceDetail()
+                {
+                    ServiceId = entity.ServiceId,
+                    ServiceName = entity.ServiceName,
+                    //ServiceNote = entity.ServiceNote
+                    Notes = entity.Notes.Select(e => new Models.NoteListItem()
+                    {
+                        Content = e.Note.Content,
+                        //ServiceNote = e.Service.ServiceId + " " + e.Service.ServiceName,
+                        CreatedUtc = e.Note.CreatedUtc,
+                        NoteId = e.NoteId
+                    }).ToList()
+                };
+                return service;
+            }
+        }
 
 
         public bool UpdateService(ServiceEdit model)

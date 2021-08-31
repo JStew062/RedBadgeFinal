@@ -18,7 +18,7 @@ namespace RedBadgeFinal.Data
         public virtual ICollection<Provider> ListOfProviders { get; set; }
 
 
-        public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
+        public virtual ICollection<ServiceNote> Notes { get; set; } = new List<ServiceNote>();
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
